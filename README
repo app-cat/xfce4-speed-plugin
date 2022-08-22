@@ -1,43 +1,25 @@
-XFce4 Netload plugin
---------------------
+# XFce4 Speed plugin
 
- - A netload plugin for the Xfce4 desktop environment -- http://www.xfce4.org -
+一个显示当前网速的小插件, `fork`于 [xfce4-netload-plugin](https://gitlab.xfce.org/panel-plugins/xfce4-netload-plugin.git)。
 
-https://docs.xfce.org/panel-plugins/xfce4-netload-plugin/start
 
-Following operating systems are supported:
- 
- * Linux
- * FreeBSD, NetBSD, OpenBSD
- * Sun Solaris
- * HP_UX
- * MacOS X
- * GNU/kFreeBSD
+### 与原版的区别有:
 
-I have only Linux installed so I can test only on Linux. If you encounter any
-problems on other operating systems (or on Linux, of course) feel free to send
-me an e-mail. If you have a patch to fix it it would be better.
+1. 样式调整
+2. 删除鼠标悬浮信息中的流量统计
 
-The code for the plugin is based on the sample-plugin from Benedikt Meurer and
-on the xfce4-systemload-plugin from Riccardo Persichetti. The layout is the same
-as the systemload-plugin. This made programming very easy and looks good, too.
 
-The netload code is based on wormulon (a command-line util) from Hendrik Scholz.
-You find this program at http://www.raisdorf.net/wormulon/.
+## 包管理器安装
 
-I'm not planning making much improvements in the future so if you want to take
-over developement, just drop me a note. I just programmed it because I needed it
-but I plan to maintain it so that it's running with the most current stable
-release of Xfce.
+```bash
+apt install xfce4-speed-plugin
+```
 
-If you have translations for your language, please mail me. I'll include it in
-the distribution!
+### 编译安装
 
-And remember:
+```bash
+./autogen.sh
+make
+make install
 
-    Interoperability is the keyword, uniformity is a dead end. 
-        --  Olivier Fourdan <fourdan@xfce.org> (founder of Xfce project)
-
-Have a lot of fun ...
-    Bernhard <bernhard.walle@gmx.de>
-
+```
