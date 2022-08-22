@@ -22,204 +22,23 @@
 #ifndef _OS_H
 #define _OS_H
 
-#if defined (__sun__)
-#  define __Solaris__ 1
-#endif
+#include <stdio.h>
+#include <sys/param.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <unistd.h>
+#include <string.h>
+#include <time.h>
+#include <ctype.h>
+#include <signal.h>
+#include <sys/wait.h>
+#include <sys/stat.h>
+#include <sys/ioctl.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <netinet/in.h>
+#include <net/if.h>
+#include <arpa/inet.h>
+#include <ifaddrs.h>
 
-#ifdef __HPUX__             /* H P U X */
-#  define _XOPEN_SOURCE_EXTENDED
-#  include <stdio.h>
-#  include <sys/param.h>
-#  include <stdlib.h>
-#  include <stdarg.h>
-#  include <stropts.h>
-#  include <unistd.h>
-#  include <string.h>
-#  include <time.h>
-#  include <ctype.h>
-#  include <signal.h>
-#  include <sys/stdsyms.h>
-#  include <sys/wait.h>
-#  include <sys/stat.h>
-#  include <sys/ioctl.h>
-#  include <sys/types.h>
-#  include <sys/socket.h>
-#  include <sys/time.h>
-#  include <netinet/in.h>
-#  include <net/if.h>
-#  include <sys/mib.h>
-#  include <arpa/inet.h>
-#  include <net/if.h>
-#elif defined (__APPLE__)             /* Mac OS X */
-#  include <stdio.h>
-#  include <stdlib.h>
-#  include <stdarg.h>
-#  include <unistd.h>
-#  include <string.h>
-#  include <time.h>
-#  include <ctype.h>
-#  include <signal.h>
-#  include <curses.h>
-#  include <ifaddrs.h>
-#  include <sys/param.h>
-#  include <sys/sysctl.h>
-#  include <sys/wait.h>
-#  include <sys/stat.h>
-#  include <sys/ioctl.h>
-#  include <sys/types.h>
-#  include <sys/socket.h>
-#  include <sys/time.h>
-#  include <netinet/in.h>
-#  include <net/route.h>
-#  include <net/if_dl.h>
-#  include <net/if.h>
-#  include <net/if_media.h>
-#  include <net/if_mib.h>
-#  include <arpa/inet.h>
-#elif defined (__DragonFly__)           /* D R A G O N F L Y */
-#  include <stdio.h>
-#  include <stdlib.h>
-#  include <stdarg.h>
-#  include <unistd.h>
-#  include <string.h>
-#  include <time.h>
-#  include <ctype.h>
-#  include <signal.h>
-#  include <sys/param.h>
-#  include <sys/sysctl.h>
-#  include <sys/wait.h>
-#  include <sys/stat.h>
-#  include <sys/ioctl.h>
-#  include <sys/types.h>
-#  include <sys/socket.h>
-#  include <sys/time.h>
-#  include <netinet/in.h>
-#  include <net/if.h>
-#  include <net/if_media.h>
-#  include <net/if_mib.h>
-#  include <arpa/inet.h>
-#elif defined (__FreeBSD__) || defined (__FreeBSD_kernel__)           /* F R E E B S D */
-#  include <stdio.h>
-#  include <stdlib.h>
-#  include <stdarg.h>
-#  include <unistd.h>
-#  include <string.h>
-#  include <time.h>
-#  include <ctype.h>
-#  include <signal.h>
-#  include <sys/param.h>
-#  include <sys/sysctl.h>
-#  include <sys/wait.h>
-#  include <sys/stat.h>
-#  include <sys/ioctl.h>
-#  include <sys/types.h>
-#  include <sys/socket.h>
-#  include <sys/time.h>
-#  include <netinet/in.h>
-#  include <net/if.h>
-#  include <net/if_media.h>
-#  include <net/if_mib.h>
-#  include <arpa/inet.h>
-#  include <ifaddrs.h>
-#elif defined (__NetBSD__)            /* N E T B S D */
-#  include <stdio.h>
-#  include <sys/param.h>
-#  include <sys/sysctl.h>
-#  include <stdlib.h>
-#  include <stdarg.h>
-#  include <unistd.h>
-#  include <string.h>
-#  include <time.h>
-#  include <ctype.h>
-#  include <signal.h>
-#  include <sys/wait.h>
-#  include <sys/stat.h>
-#  include <sys/ioctl.h>
-#  include <sys/types.h>
-#  include <sys/socket.h>
-#  include <sys/time.h>
-#  include <netinet/in.h>
-#  include <net/if.h>
-#  include <net/if_media.h>
-#  include <net/route.h>
-#  include <net/if_dl.h>
-#  include <arpa/inet.h>
-#  include <net/if.h>
-#  include <ifaddrs.h>
-#elif defined (__OpenBSD__) || defined (__MicroBSD__)           /* O P E N B S D */
-#  include <stdio.h>
-#  include <sys/param.h>
-#  include <sys/sysctl.h>
-#  include <stdlib.h>
-#  include <stdarg.h>
-#  include <unistd.h>
-#  include <string.h>
-#  include <time.h>
-#  include <ctype.h>
-#  include <signal.h>
-#  include <sys/wait.h>
-#  include <sys/stat.h>
-#  include <sys/ioctl.h>
-#  include <sys/types.h>
-#  include <sys/socket.h>
-#  include <sys/time.h>
-#  include <netinet/in.h>
-#  include <net/if.h>
-#  include <net/if_media.h>
-#  include <net/if_dl.h>
-#  include <net/route.h>
-#  include <arpa/inet.h>
-#  include <ifaddrs.h>
-#elif defined (__linux__)             /* L I N U X */
-#  include <stdio.h>
-#  include <sys/param.h>
-#  include <stdlib.h>
-#  include <stdarg.h>
-#  include <unistd.h>
-#  include <string.h>
-#  include <time.h>
-#  include <ctype.h>
-#  include <signal.h>
-#  include <sys/wait.h>
-#  include <sys/stat.h>
-#  include <sys/ioctl.h>
-#  include <sys/types.h>
-#  include <sys/socket.h>
-#  include <sys/time.h>
-#  include <netinet/in.h>
-#  include <net/if.h>
-#  include <arpa/inet.h>
-#  include <ifaddrs.h>
-#elif defined (__Solaris__)           /* S O L A R I S */
-#  include <stdio.h>
-#  define _WIDEC_H
-#  include <sys/param.h>
-#  include <stdlib.h>
-#  include <stdarg.h>
-#  include <unistd.h>
-#  include <string.h>
-#  include <time.h>
-#  include <ctype.h>
-#  include <signal.h>
-#  include <sys/wait.h>
-#  include <sys/stat.h>
-#  include <sys/ioctl.h>
-#  include <sys/types.h>
-#  include <sys/socket.h>
-#  include <sys/time.h>
-#  include <netinet/in.h>
-#  include <net/if.h>
-#  include <stropts.h>
-#  include <sys/socket.h>
-#  include <sys/sockio.h>
-#  include <net/if.h>
-#  include <kstat.h>
-#  include <net/if.h>
-#  include <sys/sockio.h>
-#  include <arpa/inet.h>
-#  include <net/if.h>
-#else
-#  error "OS not supported"
-#endif
-
-#endif
