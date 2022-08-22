@@ -15,9 +15,9 @@
 #define FALSE 0
 #endif
 
-#ifdef __linux__
+
 #define PATH_NET_DEV "/proc/net/dev"
-#endif
+
 
 /* define possible options */
 #define OPT_NONE		0x0000

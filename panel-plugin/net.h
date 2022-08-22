@@ -66,33 +66,7 @@ typedef struct
     DataStats       stats;
     int             up;
     int             up_update_count;
-#if defined(__HPUX__)
-    int             wait_pcks_counter;
-    nmapi_logstat*  if_ptr;
-#elif (defined(__FreeBSD__) || defined(__DragonFly__) || defined(__FreeBSD_kernel__))
-    int             watchif;
-    int             dev_opened;
-#elif defined(__NetBSD__)
-    int             mib_name1[6];
-    int             mib_name2[6];
-    char*           buf1;
-    char*           buf2;
-    int             alloc1;
-    int             alloc2;
-#elif (defined(__OpenBSD__) || defined(__MicroBSD__) || defined(__APPLE__))
-    int             mib_name1[6];
-    int             mib_name2[6];
-    char*           buf1;
-    char*           buf2;
-    int             alloc1;
-    int             alloc2;
-#elif defined(__linux__)
     FILE*           proc_net_dev;
-#elif defined(__Solaris__)
-#else
-#error "OS not supported"
-#endif
-    
 } netdata;
 
 

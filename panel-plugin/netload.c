@@ -58,7 +58,7 @@ static gchar* DEFAULT_COLOR[] = { "#FF4F00", "#FFE500" };
 #define TOT 2
 #define SUM 2
 
-#define APP_NAME N_("Xfce4-Netload-Plugin")
+#define APP_NAME N_("Xfce4-Speed-Plugin")
 
 static char *errormessages[] = {
     N_("Unknown error."),
@@ -992,7 +992,7 @@ static gboolean add_interface(const gchar *name, gpointer ignore, t_global_monit
 static gint monitor_populate_interface_list(t_global_monitor *global)
 {
     gint   count = 0;
-#if defined(__linux__) || defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__NetBSD__)
+
     struct ifaddrs *addrs = NULL, *addr;
 
     if (getifaddrs(&addrs) == 0)
@@ -1014,7 +1014,7 @@ static gint monitor_populate_interface_list(t_global_monitor *global)
         g_tree_unref(found_ifaces);
         freeifaddrs(addrs);
     }
-#endif /* __linux__ || __OpenBSD__ || __FreeBSD__ || __NetBSD__ */
+
 
     return count;
 }

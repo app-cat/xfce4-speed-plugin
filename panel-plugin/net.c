@@ -45,31 +45,9 @@
 #include <sys/types.h>
 #include <errno.h>
 
-#if defined(__HPUX__)
-# include "wormulon/hpux.h"
-# include "wormulon/hpux.c"
-#elif defined(__APPLE__)
-# include "src/macos.h"
-# include "src/macos.c"
-#elif (defined(__FreeBSD__) || defined(__DragonFly__) || defined(__FreeBSD_kernel__))
-# include "wormulon/freebsd.h"
-# include "wormulon/freebsd.c"
-#elif defined(__linux__)
-# include "wormulon/linux.h"
-# include "wormulon/linux.c"
-#elif (defined(__OpenBSD__) || defined(__MicroBSD__))
-# include "wormulon/openbsd.h"
-# include "wormulon/openbsd.c"
-#elif defined(__NetBSD__)
-# include "wormulon/netbsd.h"
-# include "wormulon/netbsd.c"
-#elif defined(__Solaris__)
-# include "wormulon/solaris.h"
-# include "wormulon/solaris.c"
-#else
-/* should not get here */
-# error "OS not supported"
-#endif
+#include "wormulon/linux.h"
+#include "wormulon/linux.c"
+
 
 
 /* ---------------------------------------------------------------------------------------------- */
