@@ -28,7 +28,7 @@ msgid "Net"
 msgstr "Сеть"
 
 #: ../panel-plugin/netload.c:61
-msgid "Xfce4-Netload-Plugin"
+msgid "Xfce4-Speed-Plugin"
 msgstr "Модуль сетевой активности Xfce4"
 
 #: ../panel-plugin/netload.c:64

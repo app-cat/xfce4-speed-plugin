@@ -1,4 +1,4 @@
-# Kazakh translation for xfce4-netload-plugin.
+# Kazakh translation for xfce4-speed-plugin.
 # Copyright (C) 2010 Xfce team
 # This file is distributed under the same license as the Xfce package.
 # Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2010.
@@ -20,8 +20,8 @@ msgstr ""
 "X-Poedit-Country: KAZAKHSTAN\n"
 
 #: ../panel-plugin/netload.c:62
-msgid "Xfce4-Netload-Plugin"
-msgstr "Xfce4-Netload-Plugin"
+msgid "Xfce4-Speed-Plugin"
+msgstr "Xfce4-Speed-Plugin"
 
 #: ../panel-plugin/netload.c:65
 msgid "Unknown error."

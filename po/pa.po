@@ -18,8 +18,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../panel-plugin/netload.c:62
-msgid "Xfce4-Netload-Plugin"
-msgstr "Xfce4-Netload-Plugin"
+msgid "Xfce4-Speed-Plugin"
+msgstr "Xfce4-Speed-Plugin"
 
 #: ../panel-plugin/netload.c:65
 msgid "Unknown error."

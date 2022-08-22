@@ -28,8 +28,8 @@ msgid "Net"
 msgstr "Netz"
 
 #: ../panel-plugin/netload.c:61
-msgid "Xfce4-Netload-Plugin"
-msgstr "xfce4-netload-plugin"
+msgid "Xfce4-Speed-Plugin"
+msgstr "xfce4-speed-plugin"
 
 #: ../panel-plugin/netload.c:64
 msgid "Unknown error."

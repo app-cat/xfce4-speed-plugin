@@ -1,13 +1,13 @@
 # Esperanto translations for Xfce-netload-plugin.
 # Copyright (C) 2003-2006 Bernhard Walle.
 # This file is distributed under the same license 
-# as the xfce4-netload-plugin package.
+# as the xfce4-speed-plugin package.
 # Antono Vasiljev <antono.vasiljev@gmail.com>, 2006
 # Sylvain Vedrenne <gnu_sylvain@xfce.org>, 2007.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-netload-plugin 0.2.4\n"
+"Project-Id-Version: xfce4-speed-plugin 0.2.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-16 12:09+0100\n"
 "PO-Revision-Date: 2006-09-23 03:23+0300\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/netload.c:62
-msgid "Xfce4-Netload-Plugin"
+msgid "Xfce4-Speed-Plugin"
 msgstr "Xfce4-retŝarĝ-kromaĵo"
 
 #: ../panel-plugin/netload.c:65

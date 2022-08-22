@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-netload-plugin\n"
+"Project-Id-Version: xfce4-speed-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-16 12:09+0100\n"
 "PO-Revision-Date: 2009-05-14 03:01+0500\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../panel-plugin/netload.c:62
-msgid "Xfce4-Netload-Plugin"
+msgid "Xfce4-Speed-Plugin"
 msgstr "ایکسفس 4 نیٹ لوڈ پلگ ان"
 
 #: ../panel-plugin/netload.c:65

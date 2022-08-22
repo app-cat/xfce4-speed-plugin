@@ -17,7 +17,7 @@ msgstr ""
 "X-Generator: KBabel 1.9.1\n"
 
 #: ../panel-plugin/netload.c:62
-msgid "Xfce4-Netload-Plugin"
+msgid "Xfce4-Speed-Plugin"
 msgstr "Plugin Netload của Xfce4"
 
 #: ../panel-plugin/netload.c:65
