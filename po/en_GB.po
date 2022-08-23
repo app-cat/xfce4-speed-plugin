@@ -160,15 +160,15 @@ msgstr "B"
 
 #: ../panel-plugin/utils.c:81
 msgid "KiB"
-msgstr "KiB"
+msgstr "KB"
 
 #: ../panel-plugin/utils.c:81
 msgid "MiB"
-msgstr "MiB"
+msgstr "MB"
 
 #: ../panel-plugin/utils.c:81
 msgid "GiB"
-msgstr "GiB"
+msgstr "GB"
 
 #: ../panel-plugin/utils.c:82
 msgid "bps"
