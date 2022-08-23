@@ -4,7 +4,7 @@ plugin_LTLIBRARIES = libspeed.la
 LIBS = @LIBS@ @SOLLIBS@
 
 libspeed_la_SOURCES =							\
-	netload.c							\
+	speed.c							\
 	monitor-label.c							\
 	monitor-label.h							\
 	utils.c								\
@@ -44,7 +44,7 @@ commandline_LDADD = @LIBXFCE4PANEL_LIBS@
 # We also need to let intltool merge the translated fields, so we add an
 # additional level of indirection: a <name>.desktop.in.in file.
 # 
-desktop_in_in_files = netload.desktop.in.in
+desktop_in_in_files = speed.desktop.in.in
 desktop_in_files = $(desktop_in_in_files:.desktop.in.in=.desktop.in)
 	
 desktopdir = $(datadir)/xfce4/panel/plugins

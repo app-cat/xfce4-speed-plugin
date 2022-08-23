@@ -213,23 +213,6 @@ static gboolean update_monitors(gpointer user_data)
                 global->monitor->net_max[i] *= SHRINK_MAX;
             }
         }
-
-#ifdef DEBUG        
-        switch (i) 
-        {
-            case IN:
-                DBG("input: Max = %lu", global->monitor->net_max[i]);
-                break;
-                
-            case OUT:
-                DBG("output: Max = %lu", global->monitor->net_max[i]);
-                break;
-                
-            case TOT:
-                DBG("total: Max = %lu", global->monitor->net_max[i]);
-                break;
-        }
-#endif /* DEBUG */
         
         temp = (double)display[i] / global->monitor->net_max[i];
         if (temp > 1)
@@ -356,6 +339,7 @@ static void monitor_set_mode (XfcePanelPlugin *plugin, XfcePanelPluginMode mode,
             gtk_progress_bar_set_inverted(GTK_PROGRESS_BAR(global->monitor->status[i]), FALSE);
         }
     }
+    /* 竖直方向的XFCE_PANEL */
     else if (mode == XFCE_PANEL_PLUGIN_MODE_VERTICAL)
     {
         gtk_orientable_set_orientation(GTK_ORIENTABLE(global->box), GTK_ORIENTATION_VERTICAL);
@@ -373,7 +357,7 @@ static void monitor_set_mode (XfcePanelPlugin *plugin, XfcePanelPluginMode mode,
             gtk_progress_bar_set_inverted(GTK_PROGRESS_BAR(global->monitor->status[i]), FALSE);
         }
     }
-    else /* mode == XFCE_PANEL_PLUGIN_MODE_HORIZONTAL */
+    else /* 水平方向的XFCE_PANEL */
     {
         gtk_orientable_set_orientation(GTK_ORIENTABLE(global->box), GTK_ORIENTATION_HORIZONTAL);
         gtk_orientable_set_orientation(GTK_ORIENTABLE(global->box_bars), GTK_ORIENTATION_HORIZONTAL);
@@ -641,7 +625,7 @@ static void setup_monitor(t_global_monitor *global, gboolean supress_warnings)
         gtk_widget_hide(global->ebox_bars);
     }
 
-    if (!init_netload( &(global->monitor->data), global->monitor->options.network_device)
+    if (!init_speed( &(global->monitor->data), global->monitor->options.network_device)
             && !supress_warnings)
     {
         xfce_dialog_show_error (NULL, NULL,

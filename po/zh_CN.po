@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-11 00:47+0100\n"
-"PO-Revision-Date: 2021-03-10 23:48+0000\n"
+"POT-Creation-Date: 2022-08-23 14:00+0800\n"
+"PO-Revision-Date: 2022-08-23 14:00+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,32 +15,32 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Defaults
-#: ../panel-plugin/netload.c:42
+#: ../panel-plugin/speed.c:42
 msgid "Net"
 msgstr "网络"
 
-#: ../panel-plugin/netload.c:61
+#: ../panel-plugin/speed.c:61
 msgid "Xfce4-Speed-Plugin"
 msgstr "Xfce4-Speed-Plugin"
 
-#: ../panel-plugin/netload.c:64
+#: ../panel-plugin/speed.c:64
 msgid "Unknown error."
 msgstr "未知错误。"
 
-#: ../panel-plugin/netload.c:65
+#: ../panel-plugin/speed.c:65
 msgid "Linux proc device '/proc/net/dev' not found."
 msgstr "未找到 Linux proc 设备 ‘/proc/net/dev’。"
 
-#: ../panel-plugin/netload.c:66
+#: ../panel-plugin/speed.c:66
 msgid "Interface was not found."
 msgstr "未找到网络接口。"
 
-#: ../panel-plugin/netload.c:169
+#: ../panel-plugin/speed.c:169
 #, c-format
 msgid "<< %s >> (Interface down)"
 msgstr "<< %s >> (接口关闭)"
 
-#: ../panel-plugin/netload.c:256
+#: ../panel-plugin/speed.c:256
 #, c-format
 msgid ""
 "<< %s >> (%s)\n"
@@ -51,102 +51,102 @@ msgid ""
 "Total: %s"
 msgstr "<< %s >> (%s)\n最近 %d个 时间段内\n%.2f 秒内的平均值:\n流入：%s\n流出：%s\n总共：%s"
 
-#: ../panel-plugin/netload.c:259
+#: ../panel-plugin/speed.c:259
 msgid "no IP address"
 msgstr "无 IP 地址"
 
-#: ../panel-plugin/netload.c:643
+#: ../panel-plugin/speed.c:643
 #, c-format
 msgid ""
 "%s: Error in initializing:\n"
 "%s"
 msgstr "%s：初始化时出错：\n%s"
 
-#: ../panel-plugin/netload.c:969
+#: ../panel-plugin/speed.c:969
 msgid "Monitor CPU load, swap usage and memory footprint"
 msgstr "监视 CPU 负载、交换分区用量和内存使用踪迹"
 
-#: ../panel-plugin/netload.c:971
+#: ../panel-plugin/speed.c:971
 msgid "Copyright (c) 2003-2021\n"
 msgstr "版权所有 (c) 2003-2021\n"
 
-#: ../panel-plugin/netload.c:1032
+#: ../panel-plugin/speed.c:1032
 msgid "Bar color (i_ncoming):"
 msgstr "柱图颜色(流入)(_N)："
 
-#: ../panel-plugin/netload.c:1033
+#: ../panel-plugin/speed.c:1033
 msgid "Bar color (_outgoing):"
 msgstr "柱图颜色(流出)(_O)："
 
-#: ../panel-plugin/netload.c:1036
+#: ../panel-plugin/speed.c:1036
 msgid "Maximum (inco_ming):"
 msgstr "最大值(流入)(_M)："
 
-#: ../panel-plugin/netload.c:1037
+#: ../panel-plugin/speed.c:1037
 msgid "Maximum (o_utgoing):"
 msgstr "最大值(流出)(_U)："
 
-#: ../panel-plugin/netload.c:1042 ../panel-plugin/netload.desktop.in.in.h:1
+#: ../panel-plugin/speed.c:1042 ../panel-plugin/speed.desktop.in.in.h:1
 msgid "Network Monitor"
 msgstr "网络监视器"
 
-#: ../panel-plugin/netload.c:1044
+#: ../panel-plugin/speed.c:1044
 msgid "_Close"
 msgstr "关闭(_C)"
 
-#: ../panel-plugin/netload.c:1045
+#: ../panel-plugin/speed.c:1045
 msgid "_Help"
 msgstr "帮助(_H)"
 
-#: ../panel-plugin/netload.c:1072
+#: ../panel-plugin/speed.c:1072
 msgid "_Text to display:"
 msgstr "要显示的文字(_T)："
 
-#: ../panel-plugin/netload.c:1103
+#: ../panel-plugin/speed.c:1103
 msgid "Network _device:"
 msgstr "网络设备(_D)："
 
-#: ../panel-plugin/netload.c:1134
+#: ../panel-plugin/speed.c:1134
 msgid "Update _interval:"
 msgstr "更新间隔(_I)："
 
-#: ../panel-plugin/netload.c:1148
+#: ../panel-plugin/speed.c:1148
 msgid "s"
 msgstr "秒"
 
-#: ../panel-plugin/netload.c:1163
+#: ../panel-plugin/speed.c:1163
 msgid "Show values as _bits"
 msgstr "以比特显示值(_B)"
 
-#: ../panel-plugin/netload.c:1177
+#: ../panel-plugin/speed.c:1177
 msgid "_Automatic maximum"
 msgstr "自动最大值(_A)"
 
-#: ../panel-plugin/netload.c:1212
+#: ../panel-plugin/speed.c:1212
 msgid "KiB/s"
 msgstr "KiB/s"
 
-#: ../panel-plugin/netload.c:1238
+#: ../panel-plugin/speed.c:1238
 msgid "_Present data as:"
 msgstr "显示方法(_P)："
 
-#: ../panel-plugin/netload.c:1248
+#: ../panel-plugin/speed.c:1248
 msgid "Bars"
 msgstr "柱图"
 
-#: ../panel-plugin/netload.c:1249
+#: ../panel-plugin/speed.c:1249
 msgid "Values"
 msgstr "文字"
 
-#: ../panel-plugin/netload.c:1250
+#: ../panel-plugin/speed.c:1250
 msgid "Bars and values"
 msgstr "柱图和文字"
 
-#: ../panel-plugin/netload.c:1293
+#: ../panel-plugin/speed.c:1293
 msgid "_Colorize values"
 msgstr "使用彩色显示文字(_C)"
 
-#: ../panel-plugin/netload.desktop.in.in.h:2
+#: ../panel-plugin/speed.desktop.in.in.h:2
 msgid "Show network traffic"
 msgstr "显示网络流量"
 

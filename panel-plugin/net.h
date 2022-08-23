@@ -77,10 +77,10 @@ typedef struct
  * @return  <code>true</code> if no error occurs, <code>false</code> otherwise. If there's
  *          an error, the error message may be set
  */
-int init_netload(netdata* data, const char* device);
+int init_speed(netdata* data, const char* device);
 
 /**
- * Gets the current netload. You must call init_netload() once before you use this function!
+ * Gets the current speed. You must call init_speed() once before you use this function!
  * @param in        Input load in byte/s.
  * @param out       Output load in byte/s.
  * @param tot       Total load in byte/s.
