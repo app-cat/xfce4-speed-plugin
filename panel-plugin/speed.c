@@ -39,7 +39,7 @@
 #define BORDER 8
 
 /* Defaults */
-#define DEFAULT_TEXT N_("Net")
+#define DEFAULT_TEXT N_("")
 
 #define INIT_MAX 4096
 #define MINIMAL_MAX 1024
@@ -50,7 +50,8 @@
 
 static gchar* DEFAULT_COLOR[] = { "#FF4F00", "#FFE500" };
 
-#define UPDATE_TIMEOUT 250
+// 默认更新频率 1000 ms
+#define UPDATE_TIMEOUT 1000 
 #define MAX_LENGTH 32
 
 #define IN 0
@@ -166,7 +167,7 @@ static gboolean update_monitors(gpointer user_data)
     if (!get_interface_up(&(global->monitor->data)))
     {
         g_snprintf(caption, sizeof(caption), 
-                _("<< %s >> (Interface down)"),
+                _("【%s】: Interface down"),
                     get_name(&(global->monitor->data)));
         gtk_label_set_text(GTK_LABEL(global->tooltip_text), caption);
 
@@ -236,12 +237,8 @@ static gboolean update_monitors(gpointer user_data)
     {
         char* ip = get_ip_address(&(global->monitor->data));
         g_snprintf(caption, sizeof(caption), 
-                   _("<< %s >> (%s)\nAverage of last %d measures\n"
-                     "with an interval of %.2fs:\n"
-                     "Incoming: %s\nOutgoing: %s\nTotal: %s"),
-                    get_name(&(global->monitor->data)), ip ? ip : _("no IP address"),
-                    HISTSIZE_CALCULATE, global->monitor->options.update_interval / 1000.0,
-                    buffer[IN], buffer[OUT], buffer[TOT]);
+                   _("【%s】: %s"),
+                    get_name(&(global->monitor->data)), ip ? ip : _("no IP address"));
         gtk_label_set_text(GTK_LABEL(global->tooltip_text), caption);
 
         if (global->monitor->options.show_values)
@@ -349,8 +346,8 @@ static void monitor_set_mode (XfcePanelPlugin *plugin, XfcePanelPluginMode mode,
         gtk_widget_set_valign(global->monitor->rcv_label,GTK_ALIGN_END);
         gtk_widget_set_halign(global->monitor->sent_label,GTK_ALIGN_CENTER);
         gtk_widget_set_valign(global->monitor->sent_label,GTK_ALIGN_START);
-        gtk_label_set_angle(GTK_LABEL(global->monitor->rcv_label), 270);
         gtk_label_set_angle(GTK_LABEL(global->monitor->sent_label), 270);
+        gtk_label_set_angle(GTK_LABEL(global->monitor->rcv_label), 270);
         for (i = 0; i < SUM; i++)
         {
             gtk_orientable_set_orientation(GTK_ORIENTABLE(global->monitor->status[i]),GTK_ORIENTATION_HORIZONTAL);
@@ -366,8 +363,8 @@ static void monitor_set_mode (XfcePanelPlugin *plugin, XfcePanelPluginMode mode,
         gtk_widget_set_valign(global->monitor->rcv_label,GTK_ALIGN_CENTER);
         gtk_widget_set_halign(global->monitor->rcv_label,GTK_ALIGN_START);
         gtk_widget_set_valign(global->monitor->rcv_label,GTK_ALIGN_CENTER);
-        gtk_label_set_angle(GTK_LABEL(global->monitor->rcv_label), 0);
         gtk_label_set_angle(GTK_LABEL(global->monitor->sent_label), 0);
+        gtk_label_set_angle(GTK_LABEL(global->monitor->rcv_label), 0);
         for (i = 0; i < SUM; i++)
         {
             gtk_orientable_set_orientation(GTK_ORIENTABLE(global->monitor->status[i]),GTK_ORIENTATION_VERTICAL);
@@ -437,10 +434,10 @@ static t_global_monitor * monitor_new(XfcePanelPlugin *plugin)
     global->monitor->options.label_text = g_strdup(_(DEFAULT_TEXT));
     global->monitor->options.network_device = g_strdup("");
     global->monitor->options.old_network_device = g_strdup("");
-    global->monitor->options.use_label = TRUE;
-    global->monitor->options.show_values = FALSE;
+    global->monitor->options.use_label = FALSE;
+    global->monitor->options.show_values = TRUE;
     global->monitor->options.values_as_bits = FALSE;
-    global->monitor->options.show_bars = TRUE;
+    global->monitor->options.show_bars = FALSE;
     global->monitor->options.auto_max = TRUE;
     global->monitor->options.update_interval = UPDATE_TIMEOUT;
     
@@ -665,10 +662,10 @@ static void monitor_read_config(XfcePanelPlugin *plugin, t_global_monitor *globa
     if (!rc)
         return;
 
-    global->monitor->options.use_label = xfce_rc_read_bool_entry (rc, "Use_Label", TRUE);
-    global->monitor->options.show_values = xfce_rc_read_bool_entry (rc, "Show_Values", FALSE);
-    global->monitor->options.show_bars = xfce_rc_read_bool_entry (rc, "Show_Bars", TRUE);
-    global->monitor->options.colorize_values = xfce_rc_read_bool_entry (rc, "Colorize_Values", FALSE);
+    global->monitor->options.use_label = xfce_rc_read_bool_entry (rc, "Use_Label", FALSE);
+    global->monitor->options.show_values = xfce_rc_read_bool_entry (rc, "Show_Values", TRUE);
+    global->monitor->options.show_bars = xfce_rc_read_bool_entry (rc, "Show_Bars", FALSE);
+    global->monitor->options.colorize_values = xfce_rc_read_bool_entry (rc, "Colorize_Values", TRUE);
     if (!global->monitor->options.show_bars && !global->monitor->options.show_values)
         global->monitor->options.show_bars = TRUE;
 
@@ -944,20 +941,16 @@ static void
 monitor_show_about (XfcePanelPlugin *plugin, t_global_monitor *global)
 {
     const gchar *auth[] = {
-      "Benedikt Meurer <benedikt.meurer@unix-ag.uni-siegen.de>",
-      "Bernhard Walle <bernhard.walle@gmx.de>",
-      "Hendrik Scholz <hscholz@raisdorf.net> (Wormulon code base)",
-      "Florian Rivoal <frivoal@xfce.org>",
-      "Simon Steinbeiß <simon@xfce.org>", NULL };
+      "Yutent <yutent.io@gmail.com>", NULL };
 
     gtk_show_about_dialog (NULL,
-      "logo-icon-name", "org.xfce.panel.netload",
+      "logo-icon-name", "org.xfce.panel.speed",
       "license", xfce_get_license_text (XFCE_LICENSE_TEXT_GPL),
       "version", PACKAGE_VERSION,
       "program-name", PACKAGE_NAME,
-      "comments", _("Monitor CPU load, swap usage and memory footprint"),
-      "website", "https://docs.xfce.org/panel-plugins/xfce4-speed-plugin/start",
-      "copyright", _("Copyright (c) 2003-2021\n"),
+      "comments", _("网速显示小插件"),
+      "website", "https://github.com/app-cat/xfce4-speed-plugin",
+      "copyright", _("Copyright (c) 2022\n"),
       "authors", auth, NULL);
 }
 
