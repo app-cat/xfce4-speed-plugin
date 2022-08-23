@@ -1,9 +1,9 @@
 plugindir = $(libdir)/xfce4/panel/plugins
-plugin_LTLIBRARIES = libnetload.la
+plugin_LTLIBRARIES = libspeed.la
 
 LIBS = @LIBS@ @SOLLIBS@
 
-libnetload_la_SOURCES =							\
+libspeed_la_SOURCES =							\
 	netload.c							\
 	monitor-label.c							\
 	monitor-label.h							\
@@ -15,19 +15,19 @@ libnetload_la_SOURCES =							\
 	wormulon.h							\
 	slurm.h
 
-libnetload_la_CFLAGS =							\
+libspeed_la_CFLAGS =							\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"				\
 	@LIBXFCE4PANEL_CFLAGS@						\
 	@LIBXFCE4UI_CFLAGS@
 
-libnetload_la_LDFLAGS =							\
+libspeed_la_LDFLAGS =							\
 	-avoid-version							\
 	-module								\
 	-no-undefined							\
 	-export-symbols-regex '^xfce_panel_module_(preinit|init|construct)' \
 	$(PLATFORM_LDFLAGS)
 
-libnetload_la_LIBADD =							\
+libspeed_la_LIBADD =							\
 	@SOLLIBS@							\
 	@LIBXFCE4PANEL_LIBS@						\
 	@LIBXFCE4UI_LIBS@
