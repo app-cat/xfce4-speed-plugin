@@ -82,14 +82,14 @@ int init_netload(netdata* data, const char* device)
     
     data->correct_interface = TRUE;
     
-    DBG("The netload plugin was initialized for '%s'.", device);
+    DBG("The speed plugin was initialized for '%s'.", device);
     
     return TRUE;
 }
 
 
 /* ---------------------------------------------------------------------------------------------- */
-void get_current_netload(netdata* data, unsigned long *in, unsigned long *out, unsigned long *tot) 
+void get_current_speed(netdata* data, unsigned long *in, unsigned long *out, unsigned long *tot) 
 {
     struct timeval curr_time;
     double delta_t;

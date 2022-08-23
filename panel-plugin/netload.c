@@ -173,7 +173,7 @@ static gboolean update_monitors(gpointer user_data)
         return TRUE;
     }
 
-    get_current_netload( &(global->monitor->data), &(net[IN]), &(net[OUT]), &(net[TOT]) );
+    get_current_speed( &(global->monitor->data), &(net[IN]), &(net[OUT]), &(net[TOT]) );
     
 
     for (i = 0; i < SUM; i++)

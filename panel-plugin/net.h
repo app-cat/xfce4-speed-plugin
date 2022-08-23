@@ -85,7 +85,7 @@ int init_netload(netdata* data, const char* device);
  * @param out       Output load in byte/s.
  * @param tot       Total load in byte/s.
  */
-void get_current_netload(netdata* data, unsigned long *in, unsigned long *out, unsigned long *tot);
+void get_current_speed(netdata* data, unsigned long *in, unsigned long *out, unsigned long *tot);
 
 /**
  * Returns the name of the network interface.
