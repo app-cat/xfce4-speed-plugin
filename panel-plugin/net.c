@@ -214,7 +214,7 @@ char* get_ip_address(netdata* data)
 
 
 /* ---------------------------------------------------------------------------------------------- */
-void close_netload(netdata* data)
+void close_speed(netdata* data)
 {
     /* We need not code here */
 }

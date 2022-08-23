@@ -19,7 +19,7 @@ netdata data;
 /* ---------------------------------------------------------------------------------------------- */
 void sig_end_handler (int sig)
 {
-    close_netload(&data);
+    close_speed(&data);
     exit(0);
 }
 

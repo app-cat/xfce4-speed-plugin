@@ -32,10 +32,6 @@ libspeed_la_LIBADD =							\
 	@LIBXFCE4PANEL_LIBS@						\
 	@LIBXFCE4UI_LIBS@
 
-check_PROGRAMS = commandline
-commandline_SOURCES = commandline.c utils.c utils.h net.c net.h
-commandline_CFLAGS = @LIBXFCE4PANEL_CFLAGS@
-commandline_LDADD = @LIBXFCE4PANEL_LIBS@
 
 # .desktop file
 #
@@ -52,7 +48,7 @@ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
 EXTRA_DIST = 								\
-	wormulon commandline.c						\
+	wormulon						\
 	$(desktop_in_in_files)
 
 DISTCLEANFILES =							\

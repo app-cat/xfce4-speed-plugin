@@ -403,7 +403,7 @@ static void monitor_free(XfcePanelPlugin *plugin, t_global_monitor *global)
 
     gtk_widget_destroy(global->tooltip_text);
     
-    close_netload( &(global->monitor->data) );
+    close_speed( &(global->monitor->data) );
 
     g_free(global);
 }

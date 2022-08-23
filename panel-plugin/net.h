@@ -113,6 +113,6 @@ char* get_ip_address(netdata* data);
 /**
  * Should be called to do cleanup work.
  */
-void close_netload(netdata* data);
+void close_speed(netdata* data);
 
 #endif /* NET_H */
