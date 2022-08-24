@@ -1,6 +1,6 @@
 # XFce4 Speed plugin
 
-一个显示当前网速的小插件, `fork`于 [xfce4-speed-plugin](https://gitlab.xfce.org/panel-plugins/xfce4-speed-plugin.git)。
+一个显示当前网速的小插件, `fork`于 [xfce4-netload-plugin](https://gitlab.xfce.org/panel-plugins/xfce4-netload-plugin)。
 
 
 ### 与原版的区别有:
